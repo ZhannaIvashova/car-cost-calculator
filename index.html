@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/normalize.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>Калькулятор расчёта стоимости автомобиля</h1>
+    <form name="calculator" novalidate>
+      <div class="field car-selection">
+        <select name="car-make" class="form-field" id="car-make">
+          <option value="" selected>Марка</option>
+          <option value="reno">Reno</option>
+          <option value="opel">Opel</option>
+          <option value="mazda">Mazda</option>
+          <option value="jaguar">Jaguar</option>
+        </select>
+        <select name="car-model" class="form-field" id="car-model">
+          <option value="" selected>Модель</option>
+        </select>
+      </div>
+      <br>
+      <div class="field type-fuel">
+        <p class="field__text-fuel">Вид топлива</p>
+        <div class="field__type-fuel">
+          <label for="fuel-gasoline">
+            <input type="radio" name="fuel" value="gasoline" id="fuel-gasoline"
+            class="form-field">Бензин
+          </label>
+          <label for="fuel-diesel">
+            <input type="radio" name="fuel" value="diesel" id="fuel-diesel" class="form-field">Дизель
+          </label>
+          <label for="fuel-gas">
+            <input type="radio" name="fuel" value="gas" id="fuel-gas" class="form-field">Газ
+          </label>
+          <label for="fuel-electricity">
+            <input type="radio" name="fuel" value="electricity" id="fuel-electricity" class="form-field">Электричество
+          </label>
+        </div>
+      </div>
+      <br>
+      <div class="field engine-capacity">
+        <p class="field__text-engine">Объем двигателя<br><span>(введите от 1.1 л. до 3.5 л.)</span></p>
+        <div class="field__info-engine">
+          <input type="number" name="engine-capacity" id="engine" class="form-field" min="1.1" max="3.5" required>
+          <p class="error"></p>
+        </div>
+      </div>
+      <br>
+      <div class="field condition-car">
+        <p class="field__text-condition-car">Состояние автомобиля</p>
+        <label for="new-car">
+          <input type="radio" name="condition" value="new-car" id="new-car"
+          class="form-field">Новый
+        </label>
+        <label for="used-car">
+          <input type="radio" name="condition" value="used-car" id="used-car" class="form-field">Подержанный
+        </label>
+      </div>
+      <br>
+      <div class="field num-owners hidden">
+        <p class="field__num-owners">Количество владельцев</p>
+        <label for="less-owners">
+          <input type="radio" name="owner" value="oneTwoOwners" id="few-owners"
+          class="form-field">1-2 владельца
+        </label>
+        <label for="more-owners">
+          <input type="radio" name="owner" value="threeOwners" id="many-owners" class="form-field">Более 3-х владельцев
+        </label>
+      </div>
+      <br>
+      <div class="field payment">
+        <p class="field__text-payment">Способ оплаты</p>
+        <div class="field__type-payment">
+          <label for="payment-card">
+            <input type="radio" name="payment" value="card" id="payment-card"
+            class="form-field">Карта
+          </label>
+          <label for="payment-cash">
+            <input type="radio" name="payment" value="cash" id="payment-cash" class="form-field">Наличные
+          </label>
+          <label for="payment-cash">
+            <input type="radio" name="payment" value="legal-entity" id="payment-legal-entity" class="form-field">Счет на юридическое лицо
+          </label>
+        </div>
+      </div>
+      <button name="buttonSend">Узнать стоимость</button>
+      <br>
+      <p class="result-text"></p>
+      <br>
+    </form>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+</html>
